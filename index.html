@@ -6,7 +6,7 @@
   <title>Treemap Diagram</title>
   
   
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css'>
 
       <link rel="stylesheet" href="css/style.css">
 
@@ -24,9 +24,18 @@
 					<h1 id="title" class="text-center">Treemap Diagram</h1>
 					<p id="description" class="text-center">&nbsp;</p>
 					<div id="selector" class="text-center">
-						<input type="radio" name="dataset" id="KickstarterPledges" value="KickstarterPledges" checked="checked"> <label for="KickstarterPledges">Kickstarter Pledges</label>
-						<input type="radio" name="dataset" value="MovieSales" id="MovieSales"> <label for="MovieSales">Movie Sales</label>
-						<input type="radio" name="dataset" value="VideoGameSales" id="VideoGameSales"> <label for="VideoGameSales">Video Game Sales</label>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input id="KickstarterPledges" class="custom-control-input" type="radio" name="dataset" value="KickstarterPledges" checked>
+							<label class="custom-control-label" for="KickstarterPledges">Kickstarter Pledges</label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input id="MovieSales" class="custom-control-input" type="radio" name="dataset" value="MovieSales">
+							<label class="custom-control-label" for="MovieSales">Movie Sales</label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input id="VideoGameSales" class="custom-control-input" type="radio" name="dataset" value="VideoGameSales">
+							<label class="custom-control-label" for="VideoGameSales">Video Game Sales</label>
+						</div>
 					</div>
 					<div id="canvas"></div>
 				</div>
