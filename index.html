@@ -1,57 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" >
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Treemap Diagram</title>
-  
-  
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css'>
+	<meta charset="UTF-8">
+	<title>Treemap Diagram</title>
 
-      <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
 
-  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+	<script src="js/index.js"></script>
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </head>
-
 <body>
-
-  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-<div class="container">
-  <div class="row">
-		<div class="col">
-			<div class="jumbotron p-4">
-				<div class="container">
-					<h1 id="title" class="text-center">Treemap Diagram</h1>
-					<p id="description" class="text-center">&nbsp;</p>
-					<div id="selector" class="text-center">
-						<div class="custom-control custom-radio custom-control-inline">
-							<input id="KickstarterPledges" class="custom-control-input" type="radio" name="dataset" value="KickstarterPledges" checked>
-							<label class="custom-control-label" for="KickstarterPledges">Kickstarter Pledges</label>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="jumbotron p-4">
+					<div class="container">
+						<h1 id="title" class="text-center">Treemap Diagram</h1>
+						<p id="description" class="text-center">&nbsp;</p>
+						<div id="selector" class="text-center">
+							<div class="custom-control custom-radio custom-control-inline">
+								<input id="KickstarterPledges" class="custom-control-input" type="radio" name="dataset" value="KickstarterPledges" checked>
+								<label class="custom-control-label" for="KickstarterPledges">Kickstarter Pledges</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input id="MovieSales" class="custom-control-input" type="radio" name="dataset" value="MovieSales">
+								<label class="custom-control-label" for="MovieSales">Movie Sales</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input id="VideoGameSales" class="custom-control-input" type="radio" name="dataset" value="VideoGameSales">
+								<label class="custom-control-label" for="VideoGameSales">Video Game Sales</label>
+							</div>
 						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input id="MovieSales" class="custom-control-input" type="radio" name="dataset" value="MovieSales">
-							<label class="custom-control-label" for="MovieSales">Movie Sales</label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input id="VideoGameSales" class="custom-control-input" type="radio" name="dataset" value="VideoGameSales">
-							<label class="custom-control-label" for="VideoGameSales">Video Game Sales</label>
-						</div>
+						<div id="canvas"></div>
 					</div>
-					<div id="canvas"></div>
 				</div>
 			</div>
 		</div>
-  </div>
-</div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js'></script>
-
-  
-
-    <script  src="js/index.js"></script>
-
-
-
-
+	</div>
 </body>
-
 </html>
