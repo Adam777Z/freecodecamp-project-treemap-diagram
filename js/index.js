@@ -14,19 +14,22 @@ const w = 1032;
 const h = 1000;
 const legendH = 100;
 
-const tooltip = d3.select('body')
-								.append('div')
-								.attr('id', 'tooltip');
-
-const svg = d3.select('#canvas')
-							.append('svg')
-							.attr('width', w)
-							.attr('height', h);
+var tooltip;
+var svg;
 
 const colorScale = d3.scaleOrdinal()
 						.range(schemeCategory20);
 
 document.addEventListener('DOMContentLoaded', function(event) {
+	tooltip = d3.select('body')
+								.append('div')
+								.attr('id', 'tooltip');
+
+	svg = d3.select('#canvas')
+							.append('svg')
+							.attr('width', w)
+							.attr('height', h);
+
 	Promise.all([KickstarterPledgesURL, MovieSalesURL, VideoGameSalesURL].map(url => d3.json(url))).then(function(data) {
 		dataset['KickstarterPledges'] = data[0];
 		dataset['KickstarterPledges']['title'] = 'Kickstarter Pledges';
