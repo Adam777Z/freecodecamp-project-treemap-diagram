@@ -60,13 +60,13 @@ function createTreemap(datasetName = 'KickstarterPledges') {
 	const tree = d3.hierarchy(dataset[datasetName])
 					.sum(d => d['value'])
 					.sort((a, b) => b.height - a.height || b.value - a.value);
-	
+
 	treemap(tree);
 
 	const legend = svg.append('g')
 						.attr('id', 'legend')
 						.attr('transform', 'translate(' + (w / 10.7) + ', 0)');
-	
+
 	let categories = tree.leaves().map(e => e['data']['category']).filter((value, index, self) => self.indexOf(value) === index);
 
 	const legendRectSize = 15;
@@ -94,7 +94,7 @@ function createTreemap(datasetName = 'KickstarterPledges') {
 	let treeMap = svg.append('g')
 					.attr('id', 'tree-map')
 					.attr('transform', 'translate(0, ' + (legendH + 10) + ')');
-	
+
 	let group = treeMap.selectAll('g')
 									.data(tree.leaves())
 									.enter()
@@ -115,7 +115,7 @@ function createTreemap(datasetName = 'KickstarterPledges') {
 				.on('mouseover', (d) => tooltip.style('display', 'block').attr('data-value', d['value']).text(d['data']['name'] + ' (' + d['data']['category'] + '): ' + d['data']['value']))
 				.on('mousemove', () => tooltip.style('top', (d3.event.pageY - 35) + 'px').style('left', (d3.event.pageX + 5) + 'px'))
 				.on('mouseout', () => tooltip.style('display', 'none'));
-	
+
 	group.append('text')
 				.attr('class', 'tile-text')
 				.selectAll('tspan')
