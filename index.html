@@ -13,28 +13,26 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row">
-			<div class="col">
-				<div class="jumbotron p-4">
-					<div class="container">
-						<h1 id="title" class="text-center">Treemap Diagram</h1>
-						<p id="description" class="text-center">&nbsp;</p>
-						<div id="selector" class="text-center">
-							<div class="custom-control custom-radio custom-control-inline">
-								<input id="KickstarterPledges" class="custom-control-input" type="radio" name="dataset" value="KickstarterPledges" checked>
-								<label class="custom-control-label" for="KickstarterPledges">Kickstarter Pledges</label>
-							</div>
-							<div class="custom-control custom-radio custom-control-inline">
-								<input id="MovieSales" class="custom-control-input" type="radio" name="dataset" value="MovieSales">
-								<label class="custom-control-label" for="MovieSales">Movie Sales</label>
-							</div>
-							<div class="custom-control custom-radio custom-control-inline">
-								<input id="VideoGameSales" class="custom-control-input" type="radio" name="dataset" value="VideoGameSales">
-								<label class="custom-control-label" for="VideoGameSales">Video Game Sales</label>
-							</div>
+		<div class="p-4 my-4 bg-light rounded-3">
+			<div class="row text-center">
+				<div class="col">
+					<h1 id="title">Treemap Diagram</h1>
+					<p id="description">&nbsp;</p>
+					<div id="selector">
+						<div class="form-check form-check-inline">
+							<input type="radio" name="dataset" id="KickstarterPledges" class="form-check-input" value="KickstarterPledges" checked>
+							<label for="KickstarterPledges" class="form-check-label">Kickstarter Pledges</label>
 						</div>
-						<div id="canvas"></div>
+						<div class="form-check form-check-inline">
+							<input type="radio" name="dataset" id="MovieSales" class="form-check-input" value="MovieSales">
+							<label for="MovieSales" class="form-check-label">Movie Sales</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input type="radio" name="dataset" id="VideoGameSales" class="form-check-input" value="VideoGameSales">
+							<label for="VideoGameSales" class="form-check-label">Video Game Sales</label>
+						</div>
 					</div>
+					<div id="canvas"></div>
 				</div>
 			</div>
 		</div>
