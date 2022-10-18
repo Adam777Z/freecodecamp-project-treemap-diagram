@@ -20,7 +20,7 @@ var svg;
 const colorScale = d3.scaleOrdinal()
 								.range(schemeCategory20);
 
-document.addEventListener('DOMContentLoaded', function(event) {
+document.addEventListener('DOMContentLoaded', (event) => {
 	tooltip = d3.select('body')
 								.append('div')
 								.attr('id', 'tooltip');
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 								.attr('width', w)
 								.attr('height', h);
 
-	Promise.all([KickstarterPledgesURL, MovieSalesURL, VideoGameSalesURL].map(url => d3.json(url))).then(function(data) {
+	Promise.all([KickstarterPledgesURL, MovieSalesURL, VideoGameSalesURL].map(url => d3.json(url))).then((data) => {
 		dataset['KickstarterPledges'] = data[0];
 		dataset['KickstarterPledges']['title'] = 'Kickstarter Pledges';
 		dataset['KickstarterPledges']['description'] = 'Top 100 Most Pledged Kickstarter Campaigns Grouped By Category';
@@ -43,12 +43,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 		createTreemap(datasetName);
 
-		let selectors = document.getElementsByName('dataset');
-		selectors.forEach(function(element) {
-			element.onclick = function(event) {
-				datasetName = this.value;
+		document.getElementsByName('dataset').forEach((element) => {
+			element.addEventListener('click', (event2) => {
+				datasetName = event2.target.value;
 				createTreemap(datasetName);
-			};
+			});
 		});
 	});
 });
