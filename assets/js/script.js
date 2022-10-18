@@ -115,7 +115,7 @@ function createTreemap(datasetName = 'KickstarterPledges') {
 	.attr('data-value', (d, i) => d['data']['value'])
 	// .append('title')
 	// .text(d['data']['name'] + ' (' + d['data']['category'] + '): ' + d['data']['value'])
-	.on('mouseover', (d) => tooltip.style('display', 'block').attr('data-value', d['value']).text(d['data']['name'] + ' (' + d['data']['category'] + '): ' + d['data']['value']))
+	.on('mouseover', (d) => tooltip.style('display', 'block').attr('data-value', d['value']).text(d['data']['name'] + ' (' + d['data']['category'] + '): ' + parseFloat(d['data']['value']).toLocaleString('en')))
 	.on('mousemove', () => tooltip.style('top', (d3.event.pageY - 35) + 'px').style('left', (d3.event.pageX + 5) + 'px'))
 	.on('mouseout', () => tooltip.style('display', 'none'));
 
